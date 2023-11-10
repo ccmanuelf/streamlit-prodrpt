@@ -16,7 +16,7 @@ def page_2_function_here():
 	st.success('Welcome to Page 2!')
     
 # Assuming Sheet1 has two columns "username" & "password"
-sheet_url = st.secrets["connections.gsheets"]["https://docs.google.com/spreadsheets/d/1jTkdI0nqe27Jpvgu5fwefMXVXmaYVOZsVRtK-0yAYt4"] # Replace with actual key names if different
+sheet_url = st.secrets["gsheets"]["https://docs.google.com/spreadsheets/d/1jTkdI0nqe27Jpvgu5fwefMXVXmaYVOZsVRtK-0yAYt4"] # Replace with actual key names if different
 
 # Fetching data from google sheet into pandas dataframe 
 credentials_df = conn.get(sheet_url).worksheet("Sheet1").get_all_records()
