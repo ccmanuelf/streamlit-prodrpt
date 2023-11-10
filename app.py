@@ -15,11 +15,11 @@ def page_2_function_here():
 	st.subheader('Page 2')
 	st.success('Welcome to Page 2!')
     
-# Assuming Sheet1 has two columns "username" & "password"
-sheet_url = st.secrets["gsheets"]["https://docs.google.com/spreadsheets/d/1jTkdI0nqe27Jpvgu5fwefMXVXmaYVOZsVRtK-0yAYt4"] # Replace with actual key names if different
+# Establishing a Google Sheets connection
+conn = st.experimental_connection("gsheets", type=GSheetsConnection)
 
 # Fetching data from google sheet into pandas dataframe 
-credentials_df = conn.get(sheet_url).worksheet("Sheet1").get_all_records()
+credentials_df = conn.read(worksheet="Sheet1").get_all_records()
 credentials_df = pd.DataFrame(credentials_df)
 
 usernames = credentials_df['username'].tolist()
