@@ -59,7 +59,7 @@ if name != "":
 	page_names_to_funcs={
 	    "Home": home_page_function_here,
 	    "Page2": page_2_function_here,
-	    ... # add more pages/functions here accordingly 
+	    # add more pages/functions here accordingly 
 	}
 	
 	selected_page_option_label_selected_by_user_via_dropdown_menu_widget_on_sidebar\
