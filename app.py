@@ -21,6 +21,7 @@ conn = st.experimental_connection("gsheets", type=GSheetsConnection)
 credentials_df = conn.read(worksheet="Sheet1")
 st.dataframe(credentials_df)
 
+"""
 usernames = credentials_df['username'].tolist()
 
 # Hash passwords (assuming they are stored in plain text which is not recommended for production)
@@ -67,3 +68,4 @@ elif authentication_status == False:
 
 elif authentication_status == None:
 	st.warning('Please enter your username and password')
+"""
