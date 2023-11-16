@@ -18,7 +18,7 @@ def page_2():
 conn = st.experimental_connection("gsheets", type=GSheetsConnection)
 
 # Fetching data from google sheet into pandas dataframe 
-credentials_df = conn.read(worksheet="Sheet1")
+credentials_df = conn.read(worksheet="Sheet1", usecols=[0,1])
 st.dataframe(credentials_df)
 
 """
