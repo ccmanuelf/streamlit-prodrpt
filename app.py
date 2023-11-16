@@ -18,8 +18,8 @@ def page_2():
 conn = st.connection("gsheets", type=GSheetsConnection)
 
 # Fetching data from google sheet into pandas dataframe 
-credentials_df = conn.read(worksheet="Sheet1", usecols=[0,1,2], ttl=4)
-st.dataframe(credentials_df)
+credentials_df = conn.read(worksheet="Sheet1", usecols=[0,1], ttl=4)
+st.dataframe(credentials_df.dropna(how="all"))
 
 """
 usernames = credentials_df['username'].tolist()
