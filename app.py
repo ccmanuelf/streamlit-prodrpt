@@ -15,10 +15,10 @@ def page_2():
     st.success('Welcome to Page 2!')
 
 # Establishing a Google Sheets connection using "connection.gsheets" from secrets.toml.
-conn = st.experimental_connection("gsheets", type=GSheetsConnection)
+conn = st.connection("gsheets", type=GSheetsConnection)
 
 # Fetching data from google sheet into pandas dataframe 
-credentials_df = conn.read(worksheet="Sheet1", usecols=[0,1])
+credentials_df = conn.read(worksheet="Sheet1", usecols=[0,1], ttl=2)
 st.dataframe(credentials_df)
 
 """
